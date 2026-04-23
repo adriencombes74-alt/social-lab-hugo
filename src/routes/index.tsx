@@ -42,7 +42,6 @@ function Index() {
       <HowItWorks />
       <Offer />
       <Guarantee />
-      <Testimonials />
       <Contact />
       <Footer />
     </div>
@@ -339,9 +338,8 @@ function Contact() {
             et lancer la livraison de prospects sous 7 jours.
           </p>
           <div className="mt-10 space-y-3 text-sm text-background/70">
-            <div className="flex items-center gap-2"><Handshake className="h-4 w-4" /> Paris, France</div>
-            <div className="flex items-center gap-2">✉️ contact@social-lab.fr</div>
-            <div className="flex items-center gap-2"><Phone className="h-4 w-4" /> 01 23 45 67 89</div>
+            <div className="flex items-center gap-2">✉️ atelierdigital.hb@gmail.com</div>
+            <div className="flex items-center gap-2"><Phone className="h-4 w-4" /> 07 69 98 28 80</div>
           </div>
         </div>
 
