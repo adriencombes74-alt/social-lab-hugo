@@ -168,7 +168,7 @@ function Offer() {
     "Numéros des prospects livrés directement, en temps réel",
     "Aucune compétence ni outil marketing requis de votre côté",
     "Prospects qualifiés : projet de cuisine, zone géographique, budget",
-    "Vous ne payez la commission que sur les clients réellement signés",
+    "Vous ne payez la commission que sur les clients signés en provenance des publicités",
     "Mise en place offerte, lancement sous 7 jours",
   ];
   return (
