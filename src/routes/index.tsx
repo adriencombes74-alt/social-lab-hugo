@@ -169,7 +169,7 @@ function Offer() {
     "Aucune compétence ni outil marketing requis de votre côté",
     "Prospects qualifiés : projet de cuisine, zone géographique, budget",
     "Vous ne payez la commission que sur les clients signés en provenance des publicités",
-    "Mise en place offerte, lancement sous 7 jours",
+    
   ];
   return (
     <section id="offre" className="py-28 bg-secondary/40">
