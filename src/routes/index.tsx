@@ -17,6 +17,9 @@ import {
   Inbox,
   Megaphone,
   Handshake,
+  MapPin,
+  MessageCircle,
+  Video,
 } from "lucide-react";
 
 export const Route = createFileRoute("/")({
@@ -40,6 +43,7 @@ function Index() {
       <Nav />
       <Hero />
       <HowItWorks />
+      <About />
       <Offer />
       <WinWin />
       <Contact />
@@ -60,6 +64,7 @@ function Nav() {
         </a>
         <nav className="hidden md:flex items-center gap-8 text-sm text-muted-foreground">
           <a href="#fonctionnement" className="hover:text-foreground transition-colors">Fonctionnement</a>
+          <a href="#qui-je-suis" className="hover:text-foreground transition-colors">Qui je suis</a>
           <a href="#offre" className="hover:text-foreground transition-colors">Offre</a>
           <a href="#gagnant-gagnant" className="hover:text-foreground transition-colors">Gagnant-gagnant</a>
         </nav>
