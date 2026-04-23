@@ -117,7 +117,7 @@ function HowItWorks() {
     {
       icon: Megaphone,
       title: "Nous diffusons les pubs Meta",
-      desc: "Création, ciblage, budget, optimisation : tout est géré chez nous. Vous n'avez rien à toucher.",
+      desc: "Meta, c'est Facebook et Instagram. Création, ciblage, budget, optimisation : tout est géré chez nous. Vous n'avez rien à toucher.",
     },
     {
       icon: Inbox,
