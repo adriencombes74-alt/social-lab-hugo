@@ -249,12 +249,12 @@ function Guarantee() {
           <h2 className="font-display text-4xl md:text-5xl text-balance leading-tight">
             Moins de 5 prospects livrés ce mois-ci ?
             <br />
-            <span className="italic text-brown">Le mois suivant est offert.</span>
+            <span className="italic text-brown">Le mois suivant, commission à 0%.</span>
           </h2>
           <p className="mt-6 text-lg text-muted-foreground max-w-2xl mx-auto leading-relaxed">
             Si nous vous livrons moins de 5 numéros de prospects qualifiés au mois N,
-            le forfait fixe du mois N+1 vous est{" "}
-            <strong className="text-foreground">intégralement offert</strong>. Sans condition.
+            la commission de 6% du mois N+1 vous est{" "}
+            <strong className="text-foreground">intégralement offerte</strong>. Sans condition.
           </p>
         </div>
       </div>
