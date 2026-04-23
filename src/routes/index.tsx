@@ -167,8 +167,8 @@ function Offer() {
     "Numéros des prospects livrés directement, en temps réel",
     "Aucune compétence ni outil marketing requis de votre côté",
     "Prospects qualifiés : projet de cuisine, zone géographique, budget",
-    "Vous ne payez la commission que sur les clients signés en provenance des publicités",
-    
+    "Budget publicitaire ajusté en fonction de votre budget",
+    "Commission de 6% uniquement sur le CA généré par les clients issus des publicités",
   ];
   return (
     <section id="offre" className="py-28 bg-secondary/40">
@@ -200,29 +200,29 @@ function Offer() {
             style={{ background: "var(--gradient-warm)", boxShadow: "var(--shadow-elegant)" }}
           >
             <div className="relative">
-              <p className="text-sm uppercase tracking-wider opacity-80">À partir de</p>
+              <p className="text-sm uppercase tracking-wider opacity-80">Tarification</p>
               <div className="mt-2 flex items-baseline gap-1">
-                <span className="font-display text-6xl font-medium">199€</span>
-                <span className="opacity-80">/mois</span>
+                <span className="font-display text-6xl font-medium">6%</span>
+                <span className="opacity-80 ml-2">du CA généré</span>
               </div>
               <p className="mt-4 text-white/90 text-sm leading-relaxed">
-                + <strong>6%</strong> uniquement sur les clients signés grâce aux prospects livrés.
+                Uniquement sur les clients signés issus des publicités. Aucun frais fixe.
               </p>
 
               <div className="my-8 h-px bg-white/20" />
 
               <div className="space-y-3 text-sm">
                 <div className="flex justify-between">
-                  <span className="opacity-80">Engagement</span>
-                  <span className="font-medium">3 mois</span>
+                  <span className="opacity-80">Frais fixes</span>
+                  <span className="font-medium">Aucun</span>
                 </div>
                 <div className="flex justify-between">
-                  <span className="opacity-80">Mise en place</span>
-                  <span className="font-medium">Offerte</span>
+                  <span className="opacity-80">Budget publicitaire</span>
+                  <span className="font-medium">Selon votre budget</span>
                 </div>
                 <div className="flex justify-between">
-                  <span className="opacity-80">Lancement</span>
-                  <span className="font-medium">Sous 7 jours</span>
+                  <span className="opacity-80">Commission</span>
+                  <span className="font-medium">6% du CA signé</span>
                 </div>
               </div>
 
@@ -249,12 +249,12 @@ function Guarantee() {
           <h2 className="font-display text-4xl md:text-5xl text-balance leading-tight">
             Moins de 5 prospects livrés ce mois-ci ?
             <br />
-            <span className="italic text-brown">Le mois suivant est offert.</span>
+            <span className="italic text-brown">Le mois suivant, commission à 0%.</span>
           </h2>
           <p className="mt-6 text-lg text-muted-foreground max-w-2xl mx-auto leading-relaxed">
             Si nous vous livrons moins de 5 numéros de prospects qualifiés au mois N,
-            le forfait fixe du mois N+1 vous est{" "}
-            <strong className="text-foreground">intégralement offert</strong>. Sans condition.
+            la commission de 6% du mois N+1 vous est{" "}
+            <strong className="text-foreground">intégralement offerte</strong>. Sans condition.
           </p>
         </div>
       </div>
