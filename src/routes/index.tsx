@@ -242,7 +242,7 @@ function Offer() {
     "Numéros des prospects livrés directement, en temps réel",
     "Aucune compétence ni outil marketing requis de votre côté",
     "Prospects qualifiés : projet de cuisine, zone géographique, budget",
-    "Budget publicitaire ajusté en fonction de votre budget",
+    "Budget publicitaire estimé entre 350€ et 800€/mois selon vos objectifs et votre zone",
     "Commission de 6% uniquement sur le CA généré par les clients issus des publicités",
   ];
   return (
@@ -292,8 +292,8 @@ function Offer() {
                   <span className="font-medium">Aucun</span>
                 </div>
                 <div className="flex justify-between">
-                  <span className="opacity-80">Budget publicitaire</span>
-                  <span className="font-medium">Selon votre budget</span>
+                  <span className="opacity-80">Budget pub estimé</span>
+                  <span className="font-medium">350€ – 800€ / mois</span>
                 </div>
                 <div className="flex justify-between">
                   <span className="opacity-80">Commission</span>
