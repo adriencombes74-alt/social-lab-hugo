@@ -6,6 +6,7 @@ import { Textarea } from "@/components/ui/textarea";
 import { Label } from "@/components/ui/label";
 import { toast } from "sonner";
 import { Toaster } from "@/components/ui/sonner";
+import hugoPhoto from "@/assets/hugo.png";
 import {
   ArrowRight,
   Check,
@@ -188,6 +189,17 @@ function About() {
     <section id="qui-je-suis" className="py-28 bg-secondary/40">
       <div className="mx-auto max-w-6xl px-6 grid lg:grid-cols-5 gap-12 items-start">
         <div className="lg:col-span-2">
+          <div className="mb-8 relative inline-block">
+            <div
+              className="absolute -inset-3 rounded-3xl opacity-60 blur-2xl"
+              style={{ background: "var(--gradient-warm)" }}
+            />
+            <img
+              src={hugoPhoto}
+              alt="Hugo Bonny, fondateur de Social Lab"
+              className="relative rounded-2xl w-48 h-48 md:w-56 md:h-56 object-cover shadow-elegant border border-border"
+            />
+          </div>
           <p className="text-sm font-medium text-brown uppercase tracking-wider mb-3">Qui je suis</p>
           <h2 className="font-display text-4xl md:text-5xl text-balance leading-tight">
             Hugo Bonny, <span className="italic text-brown">spécialiste cuisinistes</span>.
