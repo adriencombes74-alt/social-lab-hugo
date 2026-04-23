@@ -10,21 +10,23 @@ import {
   ArrowRight,
   Check,
   Shield,
-  TrendingUp,
-  Users,
-  Target,
+  Phone,
+  PhoneCall,
   Sparkles,
   Quote,
+  Inbox,
+  Megaphone,
+  Handshake,
 } from "lucide-react";
 
 export const Route = createFileRoute("/")({
   head: () => ({
     meta: [
-      { title: "Cuisina Leads — Prospects qualifiés pour cuisinistes en France" },
+      { title: "Social Lab — Prospects qualifiés clé en main pour cuisinistes" },
       {
         name: "description",
         content:
-          "Agence spécialisée en génération de leads pour cuisinistes : 5 à 10 prospects qualifiés par mois, 2 à 4 clients signés. Garantie résultats.",
+          "Social Lab livre aux cuisinistes les coordonnées de prospects qualifiés issus de Meta Ads. Vous recevez les numéros, vous appelez, vous signez. Zéro gestion marketing.",
       },
     ],
   }),
@@ -37,7 +39,7 @@ function Index() {
       <Toaster position="top-center" />
       <Nav />
       <Hero />
-      <Stats />
+      <HowItWorks />
       <Offer />
       <Guarantee />
       <Testimonials />
@@ -52,15 +54,15 @@ function Nav() {
     <header className="fixed top-0 left-0 right-0 z-50 border-b border-border/50 bg-background/80 backdrop-blur-md">
       <div className="mx-auto flex max-w-6xl items-center justify-between px-6 py-4">
         <a href="#top" className="flex items-center gap-2">
-          <div className="h-8 w-8 rounded-md bg-gradient-warm flex items-center justify-center">
-            <Sparkles className="h-4 w-4 text-white" />
+          <div className="h-8 w-8 rounded-md bg-foreground flex items-center justify-center">
+            <Sparkles className="h-4 w-4 text-background" />
           </div>
-          <span className="font-display text-lg font-semibold">Cuisina Leads</span>
+          <span className="font-display text-lg font-semibold">Social Lab</span>
         </a>
         <nav className="hidden md:flex items-center gap-8 text-sm text-muted-foreground">
+          <a href="#fonctionnement" className="hover:text-foreground transition-colors">Fonctionnement</a>
           <a href="#offre" className="hover:text-foreground transition-colors">Offre</a>
           <a href="#garantie" className="hover:text-foreground transition-colors">Garantie</a>
-          <a href="#temoignages" className="hover:text-foreground transition-colors">Témoignages</a>
         </nav>
         <Button asChild size="sm" className="bg-foreground text-background hover:bg-foreground/90">
           <a href="#contact">Démarrer</a>
@@ -72,34 +74,37 @@ function Nav() {
 
 function Hero() {
   return (
-    <section id="top" className="relative pt-32 pb-24 overflow-hidden" style={{ background: "var(--gradient-hero)" }}>
-      <div className="absolute top-20 right-0 h-96 w-96 rounded-full opacity-30 blur-3xl" style={{ background: "var(--terracotta)" }} />
+    <section
+      id="top"
+      className="relative pt-32 pb-24 overflow-hidden"
+      style={{ background: "var(--gradient-hero)" }}
+    >
       <div className="relative mx-auto max-w-6xl px-6">
         <div className="max-w-3xl">
-          <div className="inline-flex items-center gap-2 rounded-full border border-border bg-card/50 px-4 py-1.5 text-xs font-medium text-muted-foreground mb-8">
-            <span className="h-1.5 w-1.5 rounded-full bg-terracotta animate-pulse" />
-            Spécialiste cuisinistes — France entière
+          <div className="inline-flex items-center gap-2 rounded-full border border-border bg-card/60 px-4 py-1.5 text-xs font-medium text-muted-foreground mb-8">
+            <span className="h-1.5 w-1.5 rounded-full bg-brown animate-pulse" />
+            Livraison de prospects clé en main — cuisinistes
           </div>
 
           <h1 className="font-display text-5xl md:text-7xl leading-[1.05] tracking-tight text-balance">
-            Des prospects <em className="text-terracotta not-italic font-display">qualifiés</em>,
-            des cuisines <span className="italic">vendues.</span>
+            Recevez les <em className="text-brown not-italic font-display">numéros</em> de
+            prospects qualifiés. <span className="italic">Appelez. Signez.</span>
           </h1>
 
           <p className="mt-8 text-lg md:text-xl text-muted-foreground max-w-2xl leading-relaxed">
-            Nous générons <strong className="text-foreground">5 à 10 prospects par mois</strong> pour votre showroom,
-            avec <strong className="text-foreground">2 à 4 clients signés</strong>. Acquisition publicitaire ciblée,
-            scénarios de relance, rendez-vous posés.
+            Nous lançons et gérons vos publicités Meta. Dès qu'un prospect se manifeste,
+            <strong className="text-foreground"> son numéro vous arrive directement</strong>.
+            Vous n'avez rien à gérer côté marketing : vous appelez, vous démarrez le devis.
           </p>
 
           <div className="mt-10 flex flex-col sm:flex-row gap-4">
             <Button asChild size="lg" className="bg-foreground text-background hover:bg-foreground/90 h-12 px-6">
               <a href="#contact">
-                Réserver un appel <ArrowRight className="ml-2 h-4 w-4" />
+                Recevoir mes premiers prospects <ArrowRight className="ml-2 h-4 w-4" />
               </a>
             </Button>
             <Button asChild size="lg" variant="outline" className="h-12 px-6 border-foreground/20">
-              <a href="#offre">Voir l'offre</a>
+              <a href="#fonctionnement">Comment ça marche</a>
             </Button>
           </div>
         </div>
@@ -108,26 +113,50 @@ function Hero() {
   );
 }
 
-function Stats() {
-  const stats = [
-    { value: "5–10", label: "Prospects qualifiés / mois", icon: Users },
-    { value: "2–4", label: "Clients signés / mois", icon: TrendingUp },
-    { value: "100%", label: "Spécialisé cuisinistes", icon: Target },
+function HowItWorks() {
+  const steps = [
+    {
+      icon: Megaphone,
+      title: "Nous diffusons les pubs Meta",
+      desc: "Création, ciblage, budget, optimisation : tout est géré chez nous. Vous n'avez rien à toucher.",
+    },
+    {
+      icon: Inbox,
+      title: "Vous recevez les coordonnées",
+      desc: "Dès qu'un prospect intéressé se manifeste, son numéro vous arrive directement, en temps réel.",
+    },
+    {
+      icon: PhoneCall,
+      title: "Vous appelez et vous signez",
+      desc: "Vous reprenez votre métier : vous appelez, vous fixez le rendez-vous, vous démarrez le devis.",
+    },
   ];
   return (
-    <section className="border-y border-border bg-card">
-      <div className="mx-auto max-w-6xl px-6 py-16 grid grid-cols-1 md:grid-cols-3 gap-8">
-        {stats.map((s) => (
-          <div key={s.label} className="flex items-start gap-4">
-            <div className="h-11 w-11 rounded-lg bg-secondary flex items-center justify-center shrink-0">
-              <s.icon className="h-5 w-5 text-terracotta" />
+    <section id="fonctionnement" className="py-28">
+      <div className="mx-auto max-w-6xl px-6">
+        <div className="text-center max-w-2xl mx-auto mb-16">
+          <p className="text-sm font-medium text-brown uppercase tracking-wider mb-3">Fonctionnement</p>
+          <h2 className="font-display text-4xl md:text-5xl text-balance">
+            Une livraison de prospects, simple comme un appel.
+          </h2>
+        </div>
+        <div className="grid md:grid-cols-3 gap-6">
+          {steps.map((s, i) => (
+            <div
+              key={s.title}
+              className="rounded-2xl border border-border bg-card p-8 shadow-soft"
+            >
+              <div className="flex items-center justify-between mb-6">
+                <div className="h-11 w-11 rounded-lg bg-secondary flex items-center justify-center">
+                  <s.icon className="h-5 w-5 text-brown" />
+                </div>
+                <span className="font-display text-3xl text-muted-foreground/40">0{i + 1}</span>
+              </div>
+              <h3 className="font-display text-xl mb-2">{s.title}</h3>
+              <p className="text-muted-foreground leading-relaxed text-sm">{s.desc}</p>
             </div>
-            <div>
-              <div className="font-display text-4xl font-medium tracking-tight">{s.value}</div>
-              <div className="text-sm text-muted-foreground mt-1">{s.label}</div>
-            </div>
-          </div>
-        ))}
+          ))}
+        </div>
       </div>
     </section>
   );
@@ -135,20 +164,20 @@ function Stats() {
 
 function Offer() {
   const features = [
-    "Campagnes publicitaires ciblées (Meta & Google)",
-    "Landing page optimisée à votre marque",
-    "Qualification téléphonique des prospects",
-    "Scénarios de relance automatisés",
-    "Reporting hebdomadaire transparent",
-    "Accompagnement & ajustements continus",
+    "Publicités Meta entièrement gérées par Social Lab",
+    "Numéros des prospects livrés directement, en temps réel",
+    "Aucune compétence ni outil marketing requis de votre côté",
+    "Prospects qualifiés : projet de cuisine, zone géographique, budget",
+    "Vous ne payez la commission que sur les clients réellement signés",
+    "Mise en place offerte, lancement sous 7 jours",
   ];
   return (
-    <section id="offre" className="py-28">
+    <section id="offre" className="py-28 bg-secondary/40">
       <div className="mx-auto max-w-6xl px-6">
         <div className="text-center max-w-2xl mx-auto mb-16">
-          <p className="text-sm font-medium text-terracotta uppercase tracking-wider mb-3">Notre offre</p>
+          <p className="text-sm font-medium text-brown uppercase tracking-wider mb-3">Notre offre</p>
           <h2 className="font-display text-4xl md:text-5xl text-balance">
-            Un partenariat aligné sur vos résultats.
+            Vous recevez les contacts. Nous gérons le reste.
           </h2>
         </div>
 
@@ -158,8 +187,8 @@ function Offer() {
             <ul className="space-y-4">
               {features.map((f) => (
                 <li key={f} className="flex items-start gap-3">
-                  <div className="h-5 w-5 rounded-full bg-terracotta/10 flex items-center justify-center shrink-0 mt-0.5">
-                    <Check className="h-3 w-3 text-terracotta" strokeWidth={3} />
+                  <div className="h-5 w-5 rounded-full bg-brown/10 flex items-center justify-center shrink-0 mt-0.5">
+                    <Check className="h-3 w-3 text-brown" strokeWidth={3} />
                   </div>
                   <span className="text-foreground/90">{f}</span>
                 </li>
@@ -167,8 +196,10 @@ function Offer() {
             </ul>
           </div>
 
-          <div className="lg:col-span-2 rounded-2xl p-10 text-white relative overflow-hidden" style={{ background: "var(--gradient-warm)", boxShadow: "var(--shadow-elegant)" }}>
-            <div className="absolute -top-10 -right-10 h-40 w-40 rounded-full bg-white/10 blur-2xl" />
+          <div
+            className="lg:col-span-2 rounded-2xl p-10 text-white relative overflow-hidden"
+            style={{ background: "var(--gradient-warm)", boxShadow: "var(--shadow-elegant)" }}
+          >
             <div className="relative">
               <p className="text-sm uppercase tracking-wider opacity-80">À partir de</p>
               <div className="mt-2 flex items-baseline gap-1">
@@ -176,16 +207,12 @@ function Offer() {
                 <span className="opacity-80">/mois</span>
               </div>
               <p className="mt-4 text-white/90 text-sm leading-relaxed">
-                + <strong>6%</strong> uniquement sur les clients signés grâce à nos prospects.
+                + <strong>6%</strong> uniquement sur les clients signés grâce aux prospects livrés.
               </p>
 
               <div className="my-8 h-px bg-white/20" />
 
               <div className="space-y-3 text-sm">
-                <div className="flex justify-between">
-                  <span className="opacity-80">Budget publicitaire</span>
-                  <span className="font-medium">400 – 800€</span>
-                </div>
                 <div className="flex justify-between">
                   <span className="opacity-80">Engagement</span>
                   <span className="font-medium">3 mois</span>
@@ -194,9 +221,13 @@ function Offer() {
                   <span className="opacity-80">Mise en place</span>
                   <span className="font-medium">Offerte</span>
                 </div>
+                <div className="flex justify-between">
+                  <span className="opacity-80">Lancement</span>
+                  <span className="font-medium">Sous 7 jours</span>
+                </div>
               </div>
 
-              <Button asChild size="lg" className="w-full mt-8 bg-white text-terracotta-deep hover:bg-white/95">
+              <Button asChild size="lg" className="w-full mt-8 bg-white text-brown-deep hover:bg-white/95">
                 <a href="#contact">Démarrer maintenant</a>
               </Button>
             </div>
@@ -209,22 +240,22 @@ function Offer() {
 
 function Guarantee() {
   return (
-    <section id="garantie" className="py-28 bg-secondary/40">
+    <section id="garantie" className="py-28">
       <div className="mx-auto max-w-4xl px-6">
         <div className="rounded-2xl bg-card border border-border p-10 md:p-14 text-center shadow-soft">
-          <div className="inline-flex h-16 w-16 rounded-2xl bg-terracotta/10 items-center justify-center mb-6">
-            <Shield className="h-8 w-8 text-terracotta" />
+          <div className="inline-flex h-16 w-16 rounded-2xl bg-brown/10 items-center justify-center mb-6">
+            <Shield className="h-8 w-8 text-brown" />
           </div>
-          <p className="text-sm font-medium text-terracotta uppercase tracking-wider mb-3">Notre garantie</p>
+          <p className="text-sm font-medium text-brown uppercase tracking-wider mb-3">Notre garantie</p>
           <h2 className="font-display text-4xl md:text-5xl text-balance leading-tight">
-            Moins de 5 prospects ce mois-ci ?
+            Moins de 5 prospects livrés ce mois-ci ?
             <br />
-            <span className="italic text-terracotta">Le mois suivant est offert.</span>
+            <span className="italic text-brown">Le mois suivant est offert.</span>
           </h2>
           <p className="mt-6 text-lg text-muted-foreground max-w-2xl mx-auto leading-relaxed">
-            Si nous générons moins de 5 prospects qualifiés au mois N, le forfait fixe du mois N+1
-            vous est <strong className="text-foreground">intégralement offert</strong>. Sans condition,
-            sans paperasse.
+            Si nous vous livrons moins de 5 numéros de prospects qualifiés au mois N,
+            le forfait fixe du mois N+1 vous est{" "}
+            <strong className="text-foreground">intégralement offert</strong>. Sans condition.
           </p>
         </div>
       </div>
@@ -235,28 +266,31 @@ function Guarantee() {
 function Testimonials() {
   const items = [
     {
-      quote: "En 4 mois, nous avons signé 11 cuisines grâce à leurs prospects. Le ROI est imbattable.",
+      quote:
+        "Je reçois les numéros directement sur mon téléphone, j'appelle dans la foulée. Plus simple, ça n'existe pas.",
       author: "Marc L.",
       role: "Cuisiniste — Lyon",
     },
     {
-      quote: "Enfin une agence qui comprend notre métier. Les leads sont chauds et qualifiés.",
+      quote:
+        "Zéro gestion marketing de mon côté. Je me concentre sur les rendez-vous et les devis, c'est tout.",
       author: "Sophie B.",
       role: "Showroom — Bordeaux",
     },
     {
-      quote: "Le système de relance fait toute la différence. On reçoit des RDV posés, pas des numéros.",
+      quote:
+        "Les contacts sont chauds et qualifiés. Quand j'appelle, le projet de cuisine est déjà concret.",
       author: "Karim T.",
       role: "Cuisiniste — Lille",
     },
   ];
   return (
-    <section id="temoignages" className="py-28">
+    <section id="temoignages" className="py-28 bg-secondary/40">
       <div className="mx-auto max-w-6xl px-6">
         <div className="text-center max-w-2xl mx-auto mb-16">
-          <p className="text-sm font-medium text-terracotta uppercase tracking-wider mb-3">Témoignages</p>
+          <p className="text-sm font-medium text-brown uppercase tracking-wider mb-3">Témoignages</p>
           <h2 className="font-display text-4xl md:text-5xl text-balance">
-            Ils ont fait confiance à Cuisina Leads.
+            Ils reçoivent leurs prospects avec Social Lab.
           </h2>
         </div>
         <div className="grid md:grid-cols-3 gap-6">
@@ -265,7 +299,7 @@ function Testimonials() {
               key={i}
               className="rounded-2xl border border-border bg-card p-8 shadow-soft hover:shadow-elegant transition-shadow"
             >
-              <Quote className="h-6 w-6 text-terracotta/40 mb-4" />
+              <Quote className="h-6 w-6 text-brown/40 mb-4" />
               <p className="text-foreground/90 leading-relaxed">"{t.quote}"</p>
               <div className="mt-6 pt-6 border-t border-border">
                 <div className="font-medium">{t.author}</div>
@@ -296,22 +330,25 @@ function Contact() {
     <section id="contact" className="py-28 bg-foreground text-background">
       <div className="mx-auto max-w-4xl px-6 grid md:grid-cols-2 gap-16 items-start">
         <div>
-          <p className="text-sm font-medium text-terracotta uppercase tracking-wider mb-3">Contact</p>
+          <p className="text-sm font-medium text-brown uppercase tracking-wider mb-3">Contact</p>
           <h2 className="font-display text-4xl md:text-5xl text-balance leading-tight">
-            Parlons de votre showroom.
+            Recevez vos premiers prospects.
           </h2>
           <p className="mt-6 text-background/70 leading-relaxed">
-            Un appel de 20 minutes pour comprendre vos objectifs et vous dire honnêtement
-            si nous pouvons vous aider.
+            Un appel de 20 minutes pour valider votre zone, votre capacité de production
+            et lancer la livraison de prospects sous 7 jours.
           </p>
           <div className="mt-10 space-y-3 text-sm text-background/70">
-            <div>📍 Paris, France</div>
-            <div>✉️ contact@cuisinaleads.fr</div>
-            <div>📞 01 23 45 67 89</div>
+            <div className="flex items-center gap-2"><Handshake className="h-4 w-4" /> Paris, France</div>
+            <div className="flex items-center gap-2">✉️ contact@social-lab.fr</div>
+            <div className="flex items-center gap-2"><Phone className="h-4 w-4" /> 01 23 45 67 89</div>
           </div>
         </div>
 
-        <form onSubmit={onSubmit} className="space-y-4 bg-background/5 border border-background/10 rounded-2xl p-8">
+        <form
+          onSubmit={onSubmit}
+          className="space-y-4 bg-background/5 border border-background/10 rounded-2xl p-8"
+        >
           <div>
             <Label htmlFor="name" className="text-background/80">Nom</Label>
             <Input id="name" required className="mt-1.5 bg-background/10 border-background/20 text-background placeholder:text-background/40" placeholder="Jean Dupont" />
@@ -328,7 +365,7 @@ function Contact() {
             <Label htmlFor="message" className="text-background/80">Message</Label>
             <Textarea id="message" rows={4} className="mt-1.5 bg-background/10 border-background/20 text-background placeholder:text-background/40" placeholder="Parlez-nous de votre showroom…" />
           </div>
-          <Button type="submit" disabled={loading} size="lg" className="w-full bg-terracotta hover:bg-terracotta-deep text-white">
+          <Button type="submit" disabled={loading} size="lg" className="w-full bg-brown hover:bg-brown-deep text-white">
             {loading ? "Envoi…" : "Envoyer le message"}
           </Button>
         </form>
@@ -341,8 +378,8 @@ function Footer() {
   return (
     <footer className="border-t border-border py-10">
       <div className="mx-auto max-w-6xl px-6 flex flex-col md:flex-row justify-between gap-4 text-sm text-muted-foreground">
-        <div>© {new Date().getFullYear()} Cuisina Leads. Tous droits réservés.</div>
-        <div>Spécialiste génération de leads pour cuisinistes — France</div>
+        <div>© {new Date().getFullYear()} Social Lab. Tous droits réservés.</div>
+        <div>Livraison de prospects clé en main pour cuisinistes — France</div>
       </div>
     </footer>
   );

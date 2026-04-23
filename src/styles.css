@@ -31,8 +31,8 @@
   --color-ring: var(--ring);
   --color-ink: var(--ink);
   --color-cream: var(--cream);
-  --color-terracotta: var(--terracotta);
-  --color-terracotta-deep: var(--terracotta-deep);
+  --color-brown: var(--brown);
+  --color-brown-deep: var(--brown-deep);
   --color-sand: var(--sand);
   --font-display: var(--font-display);
   --font-sans: var(--font-sans);
@@ -45,12 +45,12 @@
 :root {
   --radius: 0.5rem;
 
-  /* Brand palette */
-  --cream: oklch(0.975 0.012 80);
-  --sand: oklch(0.93 0.025 75);
-  --ink: oklch(0.18 0.015 60);
-  --terracotta: oklch(0.62 0.14 38);
-  --terracotta-deep: oklch(0.5 0.13 35);
+  /* Brand palette — sobre: crème, marron, blanc, noir */
+  --cream: oklch(0.97 0.008 80);
+  --sand: oklch(0.92 0.012 75);
+  --ink: oklch(0.16 0.005 60);
+  --brown: oklch(0.42 0.04 55);
+  --brown-deep: oklch(0.3 0.035 50);
 
   --background: var(--cream);
   --foreground: var(--ink);
@@ -62,23 +62,23 @@
   --primary-foreground: var(--cream);
   --secondary: var(--sand);
   --secondary-foreground: var(--ink);
-  --muted: oklch(0.95 0.015 75);
-  --muted-foreground: oklch(0.45 0.02 60);
-  --accent: var(--terracotta);
+  --muted: oklch(0.94 0.008 75);
+  --muted-foreground: oklch(0.45 0.01 60);
+  --accent: var(--brown);
   --accent-foreground: oklch(1 0 0);
-  --destructive: oklch(0.55 0.22 25);
+  --destructive: oklch(0.55 0.15 25);
   --destructive-foreground: oklch(1 0 0);
-  --border: oklch(0.88 0.018 70);
-  --input: oklch(0.9 0.015 70);
-  --ring: var(--terracotta);
+  --border: oklch(0.88 0.01 70);
+  --input: oklch(0.9 0.008 70);
+  --ring: var(--brown);
 
   --font-display: "Fraunces", Georgia, serif;
   --font-sans: "Inter", system-ui, sans-serif;
 
-  --gradient-warm: linear-gradient(135deg, oklch(0.62 0.14 38) 0%, oklch(0.5 0.13 35) 100%);
-  --gradient-hero: linear-gradient(180deg, oklch(0.975 0.012 80) 0%, oklch(0.93 0.025 75) 100%);
-  --shadow-elegant: 0 20px 50px -20px oklch(0.5 0.13 35 / 0.25);
-  --shadow-soft: 0 4px 20px -8px oklch(0.18 0.015 60 / 0.12);
+  --gradient-warm: linear-gradient(135deg, oklch(0.42 0.04 55) 0%, oklch(0.3 0.035 50) 100%);
+  --gradient-hero: linear-gradient(180deg, oklch(0.97 0.008 80) 0%, oklch(0.92 0.012 75) 100%);
+  --shadow-elegant: 0 20px 50px -20px oklch(0.3 0.035 50 / 0.25);
+  --shadow-soft: 0 4px 20px -8px oklch(0.16 0.005 60 / 0.1);
 }
 
 .dark {
