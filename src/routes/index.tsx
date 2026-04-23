@@ -242,7 +242,7 @@ function Offer() {
     "Numéros des prospects livrés directement, en temps réel",
     "Aucune compétence ni outil marketing requis de votre côté",
     "Prospects qualifiés : projet de cuisine, zone géographique, budget",
-    "Budget publicitaire estimé entre 350€ et 800€/mois selon vos objectifs et votre zone",
+    "Budget publicitaire estimé entre 350€ et 800€/mois en fonction de votre budget et de vos besoins",
     "Commission de 6% uniquement sur le CA généré par les clients issus des publicités",
   ];
   return (
