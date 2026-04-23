@@ -44,8 +44,8 @@ function Index() {
       <Toaster position="top-center" />
       <Nav />
       <Hero />
-      <HowItWorks />
       <About />
+      <HowItWorks />
       <Offer />
       <WinWin />
       <Contact />
