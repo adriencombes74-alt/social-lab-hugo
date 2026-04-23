@@ -41,7 +41,7 @@ function Index() {
       <Hero />
       <HowItWorks />
       <Offer />
-      <Guarantee />
+      <WinWin />
       <Contact />
       <Footer />
     </div>
@@ -61,7 +61,7 @@ function Nav() {
         <nav className="hidden md:flex items-center gap-8 text-sm text-muted-foreground">
           <a href="#fonctionnement" className="hover:text-foreground transition-colors">Fonctionnement</a>
           <a href="#offre" className="hover:text-foreground transition-colors">Offre</a>
-          <a href="#garantie" className="hover:text-foreground transition-colors">Garantie</a>
+          <a href="#gagnant-gagnant" className="hover:text-foreground transition-colors">Gagnant-gagnant</a>
         </nav>
         <Button asChild size="sm" className="bg-foreground text-background hover:bg-foreground/90">
           <a href="#contact">Démarrer</a>
@@ -237,24 +237,25 @@ function Offer() {
   );
 }
 
-function Guarantee() {
+function WinWin() {
   return (
-    <section id="garantie" className="py-28">
+    <section id="gagnant-gagnant" className="py-28">
       <div className="mx-auto max-w-4xl px-6">
         <div className="rounded-2xl bg-card border border-border p-10 md:p-14 text-center shadow-soft">
           <div className="inline-flex h-16 w-16 rounded-2xl bg-brown/10 items-center justify-center mb-6">
-            <Shield className="h-8 w-8 text-brown" />
+            <Handshake className="h-8 w-8 text-brown" />
           </div>
-          <p className="text-sm font-medium text-brown uppercase tracking-wider mb-3">Notre garantie</p>
+          <p className="text-sm font-medium text-brown uppercase tracking-wider mb-3">Gagnant-gagnant</p>
           <h2 className="font-display text-4xl md:text-5xl text-balance leading-tight">
-            Moins de 5 prospects livrés ce mois-ci ?
+            Pas de client signé ?
             <br />
-            <span className="italic text-brown">Le mois suivant, commission à 0%.</span>
+            <span className="italic text-brown">Je ne suis pas payé.</span>
           </h2>
           <p className="mt-6 text-lg text-muted-foreground max-w-2xl mx-auto leading-relaxed">
-            Si nous vous livrons moins de 5 numéros de prospects qualifiés au mois N,
-            la commission de 6% du mois N+1 vous est{" "}
-            <strong className="text-foreground">intégralement offerte</strong>. Sans condition.
+            Aucun frais fixe, aucun abonnement. Je ne touche ma commission de 6%
+            que sur le <strong className="text-foreground">CA réellement signé</strong> grâce
+            aux prospects que je vous livre. Mes intérêts sont alignés avec les vôtres :
+            si vous ne gagnez pas, je ne gagne pas.
           </p>
         </div>
       </div>
