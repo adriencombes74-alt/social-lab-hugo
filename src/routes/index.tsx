@@ -86,11 +86,11 @@ function Hero() {
       style={{ background: "var(--gradient-hero)" }}
     >
       <div className="relative mx-auto max-w-6xl px-6">
-        <div className="mb-12 flex justify-center">
+        <div className="mb-12">
           <img
             src={logoSocialLab}
             alt="Hugo Bonny — Social Lab"
-            className="w-full max-w-md rounded-2xl shadow-elegant"
+            className="w-full rounded-2xl shadow-elegant"
           />
         </div>
         <div className="max-w-3xl">
