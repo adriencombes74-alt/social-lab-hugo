@@ -17,6 +17,9 @@ import {
   Inbox,
   Megaphone,
   Handshake,
+  MapPin,
+  MessageCircle,
+  Video,
 } from "lucide-react";
 
 export const Route = createFileRoute("/")({
@@ -40,6 +43,7 @@ function Index() {
       <Nav />
       <Hero />
       <HowItWorks />
+      <About />
       <Offer />
       <WinWin />
       <Contact />
@@ -60,6 +64,7 @@ function Nav() {
         </a>
         <nav className="hidden md:flex items-center gap-8 text-sm text-muted-foreground">
           <a href="#fonctionnement" className="hover:text-foreground transition-colors">Fonctionnement</a>
+          <a href="#qui-je-suis" className="hover:text-foreground transition-colors">Qui je suis</a>
           <a href="#offre" className="hover:text-foreground transition-colors">Offre</a>
           <a href="#gagnant-gagnant" className="hover:text-foreground transition-colors">Gagnant-gagnant</a>
         </nav>
@@ -153,6 +158,64 @@ function HowItWorks() {
               </div>
               <h3 className="font-display text-xl mb-2">{s.title}</h3>
               <p className="text-muted-foreground leading-relaxed text-sm">{s.desc}</p>
+            </div>
+          ))}
+        </div>
+      </div>
+    </section>
+  );
+}
+
+function About() {
+  const points = [
+    {
+      icon: MapPin,
+      title: "Basé en Haute-Savoie",
+      desc: "Indépendant installé en Haute-Savoie, j'accompagne des cuisinistes partout en France.",
+    },
+    {
+      icon: MessageCircle,
+      title: "Suivi par WhatsApp",
+      desc: "Toute la communication passe par WhatsApp : réactif, fluide, sans rendez-vous inutile.",
+    },
+    {
+      icon: Video,
+      title: "Visio quand il le faut",
+      desc: "Besoin d'échanger de vive voix ? Je reste disponible en visioconférence sur Google Meet.",
+    },
+  ];
+  return (
+    <section id="qui-je-suis" className="py-28 bg-secondary/40">
+      <div className="mx-auto max-w-6xl px-6 grid lg:grid-cols-5 gap-12 items-start">
+        <div className="lg:col-span-2">
+          <p className="text-sm font-medium text-brown uppercase tracking-wider mb-3">Qui je suis</p>
+          <h2 className="font-display text-4xl md:text-5xl text-balance leading-tight">
+            Hugo Bonny, <span className="italic text-brown">spécialiste cuisinistes</span>.
+          </h2>
+          <p className="mt-6 text-muted-foreground leading-relaxed">
+            Indépendant basé en Haute-Savoie, je travaille <strong className="text-foreground">exclusivement avec des cuisinistes</strong>.
+            Cette spécialisation me permet de connaître votre marché, vos clients et vos cycles de
+            vente — et de livrer des prospects réellement qualifiés.
+          </p>
+          <p className="mt-4 text-muted-foreground leading-relaxed">
+            À l'ère du digital, plus besoin de se déplacer : tout le suivi se fait à distance,
+            partout en France. Et quand un échange en direct s'impose, on bascule en visio.
+          </p>
+        </div>
+
+        <div className="lg:col-span-3 grid sm:grid-cols-1 gap-4">
+          {points.map((p) => (
+            <div
+              key={p.title}
+              className="rounded-2xl border border-border bg-card p-6 shadow-soft flex items-start gap-4"
+            >
+              <div className="h-11 w-11 rounded-lg bg-brown/10 flex items-center justify-center shrink-0">
+                <p.icon className="h-5 w-5 text-brown" />
+              </div>
+              <div>
+                <h3 className="font-display text-lg mb-1">{p.title}</h3>
+                <p className="text-muted-foreground text-sm leading-relaxed">{p.desc}</p>
+              </div>
             </div>
           ))}
         </div>
