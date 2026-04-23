@@ -7,6 +7,7 @@ import { Label } from "@/components/ui/label";
 import { toast } from "sonner";
 import { Toaster } from "@/components/ui/sonner";
 import hugoPhoto from "@/assets/hugo.png";
+import logoSocialLab from "@/assets/logo-social-lab.png";
 import {
   ArrowRight,
   Check,
@@ -85,6 +86,13 @@ function Hero() {
       style={{ background: "var(--gradient-hero)" }}
     >
       <div className="relative mx-auto max-w-6xl px-6">
+        <div className="mb-12 flex justify-center">
+          <img
+            src={logoSocialLab}
+            alt="Hugo Bonny — Social Lab"
+            className="w-full max-w-md rounded-2xl shadow-elegant"
+          />
+        </div>
         <div className="max-w-3xl">
           <div className="inline-flex items-center gap-2 rounded-full border border-border bg-card/60 px-4 py-1.5 text-xs font-medium text-muted-foreground mb-8">
             <span className="h-1.5 w-1.5 rounded-full bg-brown animate-pulse" />
