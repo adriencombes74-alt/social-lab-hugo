@@ -189,15 +189,15 @@ function About() {
     <section id="qui-je-suis" className="py-28 bg-secondary/40">
       <div className="mx-auto max-w-6xl px-6 grid lg:grid-cols-5 gap-12 items-start">
         <div className="lg:col-span-2">
-          <div className="mb-8 relative inline-block">
+          <div className="mb-8 relative mx-auto w-fit">
             <div
-              className="absolute -inset-3 rounded-3xl opacity-60 blur-2xl"
+              className="absolute -inset-3 rounded-full opacity-60 blur-2xl"
               style={{ background: "var(--gradient-warm)" }}
             />
             <img
               src={hugoPhoto}
               alt="Hugo Bonny, fondateur de Social Lab"
-              className="relative rounded-2xl w-48 h-48 md:w-56 md:h-56 object-cover shadow-elegant border border-border"
+              className="relative rounded-full w-48 h-48 md:w-56 md:h-56 object-cover shadow-elegant border border-border"
             />
           </div>
           <p className="text-sm font-medium text-brown uppercase tracking-wider mb-3">Qui je suis</p>
